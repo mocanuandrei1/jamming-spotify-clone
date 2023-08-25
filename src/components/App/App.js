@@ -1,21 +1,26 @@
-import logo from '../../logo.svg';
-import './App.css';
+import React from "react";
 
-import Tracklist from '../Tracklist/Tracklist';
-
-function App() {
-  const hardCodedTracks = [
-    { id: 1, name: 'Track 1', artist: 'Artist 53', album: 'Album 1' },
-    { id: 2, name: 'Track 2', artist: 'Artist 2', album: 'Album 2' },
-    // Add more tracks...
-  ];
-
+const App = () => {
   return (
-    <div className="App">
-      <h1>Jamming</h1>
-      <Tracklist tracks={hardCodedTracks} />
+    <div className="app">
+      <div className="nav">
+        <h1>Jamming</h1>
+      </div>
+      <div className="search">
+        <input
+          placeholder="Enter a song"
+          type="text"
+          id="song-search"
+          name="song-search"
+        />
+        <input type="submit" value="Search" />
+      </div>
+      <div className="songs">
+        <div className="result-songs"></div>
+        <div className="playlist-songs"></div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
